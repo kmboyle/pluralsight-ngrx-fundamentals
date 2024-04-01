@@ -1,4 +1,4 @@
-import { productsReducer } from './products-page/state/products.reducer';
+import { productsReducer } from './state/products.reducer';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
@@ -10,7 +10,8 @@ import { ProductPageComponent } from './product-page/product-page.component';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ProductEffects } from './products-page/state/products.effects';
+import { ProductEffects } from './state/products.effects';
+
 
 @NgModule({
   declarations: [

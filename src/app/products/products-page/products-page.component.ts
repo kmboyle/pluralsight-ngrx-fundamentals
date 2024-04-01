@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { ProductsPageActions } from './state/products.actions';
-import { selectProducts, selectProductsErrorMessage, selectProductsLoading, selectProductsShowProductCode, selectProductsTotal } from './state/products.selectors';
+import { ProductsPageActions } from '../state/products.actions';
+import { selectProducts, selectProductsErrorMessage, selectProductsLoading, selectProductsShowProductCode, selectProductsTotal } from '../state/products.selectors';
 
 @Component({
   selector: "app-products-page",
@@ -17,10 +17,6 @@ export class ProductsPageComponent {
 
   constructor(private store: Store) {
     this.store.subscribe((store) => console.log(store));
-  }
-
-  ngOnInit() {
-    this.store.dispatch(ProductsPageActions.loadProducts());
   }
 
   toggleShowProductCode() {

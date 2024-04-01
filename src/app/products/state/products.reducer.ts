@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { ProductsAPIActions, ProductsPageActions } from "./products.actions";
-import { Product } from "../../product.model";
+import { Product } from "../product.model";
 
 export interface ProductsState {
     showProductCode: boolean;
