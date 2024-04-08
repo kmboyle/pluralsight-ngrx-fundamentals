@@ -40,7 +40,7 @@ export class ProductEffects {
         this.actions$.pipe(
             ofType(ProductsPageActions.updateProduct),
             concatMap(({product}) => this.productsService.update(product).pipe(
-                map(() => ProductsAPIActions.productUpdatedSuccess({ product })),
+                map(() => ProductsAPIActions.productUpdatedSuccess({ update: {id: product.id, changes: product} })),
                 catchError((error) => of(ProductsAPIActions.productUpdatedFail({ message: error })))
                 )
             )
@@ -58,7 +58,7 @@ export class ProductEffects {
         )
     );
 
-    redirectToProductsPage = createEffect(
+    redirectToProductsPage$ = createEffect(
         () => this.actions$.pipe(
             ofType(
                 ProductsAPIActions.productAddedSuccess,
