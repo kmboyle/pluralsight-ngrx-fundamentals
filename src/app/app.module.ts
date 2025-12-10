@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -13,24 +13,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment.development';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
-@NgModule({
-  declarations: [AppComponent, HomeComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    StoreModule.forRoot({}),
-    StoreModule.forRoot({router: routerReducer}),
-    StoreDevtoolsModule.instrument({
-      name: 'NgRx Demo App',
-      maxAge: 25,
-      logOnly: environment.production
-    }),
-    EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent, HomeComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+        StoreModule.forRoot({}),
+        StoreModule.forRoot({ router: routerReducer }),
+        StoreDevtoolsModule.instrument({
+            name: 'NgRx Demo App',
+            maxAge: 25,
+            logOnly: environment.production
+        }),
+        EffectsModule.forRoot([]),
+        StoreRouterConnectingModule.forRoot()], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
