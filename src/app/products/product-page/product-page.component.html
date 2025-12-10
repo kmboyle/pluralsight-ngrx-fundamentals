@@ -1,10 +1,13 @@
-<div *ngIf="(loading$ | async) !== undefined; else loadingElement">
-  <app-product-edit
-    (add)="addProduct($event)"
-    (update)="updateProduct($event)"
-    (delete)="deleteProduct($event)"
-    [product]="product$ | async"
-  ></app-product-edit>
-</div>
+@if ((loading$ | async) !== undefined) {
+  <div>
+    <app-product-edit
+      (add)="addProduct($event)"
+      (update)="updateProduct($event)"
+      (delete)="deleteProduct($event)"
+      [product]="product$ | async"
+    ></app-product-edit>
+  </div>
+} @else {
+  Loading...
+}
 
-<ng-template #loadingElement>Loading...</ng-template>
