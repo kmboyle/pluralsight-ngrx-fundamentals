@@ -7,9 +7,10 @@ import { selectProductById, selectProductsLoading } from '../state/products.sele
 import { ProductsPageActions } from '../state/products.actions';
 
 @Component({
-  selector: 'app-product-page',
-  templateUrl: './product-page.component.html',
-  styleUrls: ['./product-page.component.css'],
+    selector: 'app-product-page',
+    templateUrl: './product-page.component.html',
+    styleUrls: ['./product-page.component.css'],
+    standalone: false
 })
 export class ProductPageComponent {
   // // Use this approach if your store doesn't implement Router Store

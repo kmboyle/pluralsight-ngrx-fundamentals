@@ -3,9 +3,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Product } from '../product.model';
 
 @Component({
-  selector: 'app-product-edit',
-  templateUrl: './product-edit.component.html',
-  styleUrls: ['./product-edit.component.css'],
+    selector: 'app-product-edit',
+    templateUrl: './product-edit.component.html',
+    styleUrls: ['./product-edit.component.css'],
+    standalone: false
 })
 export class ProductEditComponent {
   oldProduct: Product  | null | undefined = null;
