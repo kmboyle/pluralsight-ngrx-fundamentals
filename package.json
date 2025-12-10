@@ -21,19 +21,19 @@
     "@ngrx/component-store": "^20.1.0",
     "@ngrx/effects": "^20.1.0",
     "@ngrx/entity": "^20.1.0",
+    "@ngrx/operators": "^20.1.0",
     "@ngrx/router-store": "^20.1.0",
     "@ngrx/store": "^20.1.0",
     "@ngrx/store-devtools": "^20.1.0",
-    "angular-in-memory-web-api": "^0.20.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.16.0",
-    "@ngrx/operators": "^20.1.0"
+    "zone.js": "~0.15.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.3.13",
     "@angular/cli": "~20.3.13",
     "@angular/compiler-cli": "^20.3.15",
+    "angular-in-memory-web-api": "^0.20.0",
     "typescript": "~5.8.3"
   }
 }

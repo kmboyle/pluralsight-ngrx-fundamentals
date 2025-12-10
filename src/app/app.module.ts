@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -15,6 +15,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 @NgModule({ declarations: [AppComponent, HomeComponent],
     bootstrap: [AppComponent], imports: [BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
         StoreModule.forRoot({}),
@@ -25,5 +26,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
             logOnly: environment.production
         }),
         EffectsModule.forRoot([]),
-        StoreRouterConnectingModule.forRoot()], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        StoreRouterConnectingModule.forRoot()],
+    // providers: [provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule {}

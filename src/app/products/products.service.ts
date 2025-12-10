@@ -40,9 +40,9 @@ export class ProductsService {
     return this.http.delete(url).pipe(catchError(this.handleError));
   }
 
-  private handleError({ status }: HttpErrorResponse) {
+  private handleError(errResponse: HttpErrorResponse) {
     return throwError(
-      () => `${status}: Something bad happened.`
+      () => `${errResponse.status}: Something bad happened.`
     );
   }
 }
