@@ -5,10 +5,11 @@ import { selectProducts, selectProductsErrorMessage, selectProductsLoading, sele
 import { ProductsStore } from '../state/products.store';
 
 @Component({
-  selector: "app-products-page",
-  templateUrl: "./products-page.component.html",
-  styleUrls: ["./products-page.component.css"],
-  providers: [ProductsStore]
+    selector: "app-products-page",
+    templateUrl: "./products-page.component.html",
+    styleUrls: ["./products-page.component.css"],
+    providers: [ProductsStore],
+    standalone: false
 })
 export class ProductsPageComponent {
   products$ = this.productsStore.products$;
