@@ -21,7 +21,7 @@
     "@ngrx/component-store": "^20.1.0",
     "@ngrx/effects": "^20.1.0",
     "@ngrx/entity": "^20.1.0",
-    "@ngrx/operators": "^20.1.0",
+    "@ngrx/operators": "^21.0.1",
     "@ngrx/router-store": "^20.1.0",
     "@ngrx/store": "^20.1.0",
     "@ngrx/store-devtools": "^20.1.0",
